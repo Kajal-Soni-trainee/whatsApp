@@ -1,0 +1,18 @@
+const express = require('express');
+const route = express.Router();
+const { registerUser, createPass, loginUser, addToContactList, createGroup, addMembers, sendMsg, showContactList, sendGroupMsg, showAllMsg, showGroupMsg, setStatus } = require('../controllers/controller');
+const passport = require('passport');
+require('../middlewares/passport');
+route.post('/register', registerUser);
+route.post('/createPass', createPass);
+route.post('/login', loginUser);
+route.post('/addContact', passport.authenticate('jwt', { session: false }), addToContactList);
+route.post('/createGroup', passport.authenticate('jwt', { session: false }), createGroup);
+route.post('/addMembers', passport.authenticate('jwt', { session: false }), addMembers);
+route.get('/showContacts', passport.authenticate('jwt', { session: false }), showContactList);
+route.post('/sendMsg', passport.authenticate('jwt', { session: false }), sendMsg);
+route.post('/sendGroupMsg', passport.authenticate('jwt', { session: false }), sendGroupMsg);
+route.get('/showAllMsg', passport.authenticate('jwt', { session: false }), showAllMsg);
+route.get('/showGroupMsg', passport.authenticate('jwt', { session: false }), showGroupMsg);
+route.post('/setStatus', passport.authenticate('jwt', { session: false }), setStatus);
+module.exports = route;

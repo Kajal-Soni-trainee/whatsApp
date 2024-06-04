@@ -1,0 +1,23 @@
+{
+  "name": "whatsapp",
+  "version": "1.0.0",
+  "description": "this project is clone of whatsApp application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kajal-Soni-trainee/whatsApp.git"
+  },
+  "author": "kajal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kajal-Soni-trainee/whatsApp/issues"
+  },
+  "homepage": "https://github.com/Kajal-Soni-trainee/whatsApp#readme",
+  "dependencies": {
+    "multer": "^1.4.5-lts.1"
+  }
+}
